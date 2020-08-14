@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  app:
+    tty: true
+    stdin_open: true
+    build: ./docker/app
+    ports:
+      - ${NEST_HOST_PORT}:${PORT}
+    volumes:
+      - .:/app
